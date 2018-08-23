@@ -228,6 +228,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Properties\PublishProfiles\WeatherAPIZhengNiu - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\WeatherAPIZN20180823015815 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />

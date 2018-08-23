@@ -43,7 +43,43 @@
 
                         </div>
                         <div class="col-lg-8">
-                            <table id="table" height="300">
+                            <table class="table table-bordered">
+                                <tbody>
+                                    <tr>
+                                        <th scope="row" class="col-sm-4">Location</th>
+                                        <td id="Location"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Time</th>
+                                        <td id="Time"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Wind</th>
+                                        <td id="Wind"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Visibility</th>
+                                        <td id="Visibility"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Sky conditions</th>
+                                        <td id="Conditions"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Temperature</th>
+                                        <td id="Temperature"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Relative Humidity</th>
+                                        <td id="Humidity"></td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Pressure</th>
+                                        <td id="Pressure"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            @*<table id="table" height="300">
                                 <thead>
                                     <tr>
                                         <th data-field="Location" data-sortable="false">Location</th>
@@ -56,9 +92,9 @@
                                         <th data-field="Pressure" data-sortable="false">Pressure</th>
                                     </tr>
                                 </thead>
-                            </table>
+                            </table>*@
                             <div id="retrieveWeather" class="alert alert-primary" role="alert" style="visibility: hidden">
-                                Loading Weather from API
+                                Loading Weather from API...
                             </div>
                         </div>
                         <!-- /.panel-body -->
