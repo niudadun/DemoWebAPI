@@ -2,20 +2,9 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>Weather Check-- Zheng Niu</h1>
-    <p class="lead" id="result"></p>
-</div>
 
-<div class="row">
-    <div class="col-md-4">
-        
-        <br>
-        <div class="elegant-searchbar">
-            <h2>Please input City Name</h2>
-            <input id="cityName" type="text" placeholder="City" >          
-        </div>
-        <button id="search_Button" type="submit" class="myButton">Get Weather</button>
-    </div>
-
+<div id="containerjambo" class="jumbotron">
+    <h1>Weather API demo -  Zheng NIU</h1>
+    <p class="lead">Get weather by city name.</p>
+    @Html.ActionLink("Start search", "Index", "Search", null, new { @class = "btn btn-primary btn-lg" })
 </div>

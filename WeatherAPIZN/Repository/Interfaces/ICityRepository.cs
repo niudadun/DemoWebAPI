@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using WeatherAPIZN.Models;
 
 namespace WeatherAPIZN.Repository.Interfaces
 {
@@ -16,6 +17,6 @@ namespace WeatherAPIZN.Repository.Interfaces
         /// Method to get all available cites from API
         /// </summary>
         /// <returns>city list</returns>
-        Task<List<String>> GetCityAsync(string country);
+        Task<List<CityProperty>> GetCityAsync(string country);
     }
 }

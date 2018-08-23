@@ -18,7 +18,7 @@ namespace WeatherAPIZN.Repository
         private static string APIKey = APIAddress.APIKey;
         public async Task<String> GetWeatherAsync(string city)
         {
-            City CityInfo = new City();
+            //City CityInfo = new City();
             String propertyInfo = "";
             using (var client = new HttpClient())
             {
