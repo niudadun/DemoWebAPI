@@ -16,6 +16,7 @@ $(document).ready(function () {
     });
 
     $('#clearinput').click(function () {
+        if (searchRunning) return;
         clearInput();
         
     });
@@ -49,7 +50,8 @@ function clearInput() {
     $('#Temperature').html("");
     $('#Humidity').html("");
     $('#Pressure').html("");
-
+    $("#retrieveCities").css("visibility", "hidden");
+    $("#retrieveWeather").css("visibility", "hidden");
 }
 function GetCitiesByCountryName(countryName, comboBoxName, callbackfunction) {
     $("#retrieveCities").html("Loading a list of cities...");
@@ -89,6 +91,7 @@ function GetCitiesByCountryName(countryName, comboBoxName, callbackfunction) {
         },
         error: function (errMsg) {
             $("#retrieveCities").html("Api is not available at the moment");
+            searchRunning = false;
             console.log(errMsg);
         }
     }).done(function () {      
@@ -111,19 +114,19 @@ function getAJAX(city) {
         contentType: 'application/json; charset=utf-8',
         error: function (jqXHR, textStatus, errorThrown) {
             $("#retrieveWeather").html("Api is not available at the moment");
-            
+            searchRunning = false;
         },
         success: function (result) {
             if (result.name !== "") {
                 searchRunning = false;
-                var Location = result.name;
-                var temp = result.main.temp;
-                var pressure = result.main.pressure;
-                var humidity = result.main.humidity;
-                var wind = result.wind.speed;
-                var skycondition = result.weather[0].main;
+                var Location = result.name || "N/A";
+                var temp = result.main.temp || "N/A";
+                var pressure = result.main.pressure || "N/A";
+                var humidity = result.main.humidity || "N/A";
+                var wind = result.wind.speed || "N/A";
+                var skycondition = result.weather[0].main || "N/A";
                 var time = getDate();
-                var visibility = result.visibility;
+                var visibility = result.visibility || "N/A";
                 $('#Location').html(Location);
                 $('#Time').html(time);
                 $('#Wind').html(wind);
