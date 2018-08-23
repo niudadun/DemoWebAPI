@@ -3,9 +3,15 @@ $(document).ready(function () {
 
     $('#city').prop('disabled', true);
     $("#searchWeather").click(function () {
-        if (searchRunning) return;
+        if (searchRunning || $("#country").val() === ""
+            || $("#city").val() === null
+            || $("#city").val() === "") {
+            $("#retrieveWeather").html("Please select a city then search it.");
+            $("#retrieveWeather").css("visibility", "");
+            return;
+        } 
         searchRunning = true;
-        var city = $("#city").val();
+        var city = $("#city").val().trim();
         getAJAX(city);
     });
 
@@ -17,7 +23,13 @@ $(document).ready(function () {
         if ($("#country").val() === "") return;
         if (searchRunning) return;
         searchRunning = true;
-        GetCitiesByCountryName($("#country").val(), "city");
+        GetCitiesByCountryName($("#country").val().trim(), "city");
+    });
+    $(window).keydown(function (event) {
+        if (event.keyCode === 13) {
+            event.preventDefault();
+            return false;
+        }
     });
 });
 var searchRunning = false;
@@ -44,6 +56,7 @@ function GetCitiesByCountryName(countryName, comboBoxName, callbackfunction) {
     $("#retrieveCities").css("visibility", "");
     callbackfunction = callbackfunction || null;
     $('#city').prop('disabled', true);
+    //send country name by user inputed to controller.
     $.ajax({
         type: "Get",
         url: siteRoot + "/Search/GetComboBoxDropDownList",
@@ -83,8 +96,9 @@ function GetCitiesByCountryName(countryName, comboBoxName, callbackfunction) {
         if (callbackfunction !== null) {
             callbackfunction();
         }
-    });
+     });
 }
+//send seleted city to controller for requesting API
 function getAJAX(city) {
     $("#retrieveWeather").html("Loading Weather from API...");
     $("#retrieveWeather").css("visibility", "");
