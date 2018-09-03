@@ -28,7 +28,7 @@ namespace WeatherAPIZN.Tests.Controllers
 
             Task<String> result = weatherrepo.GetWeatherAsync("Sydney");
 
-            Assert.IsNotNull(result);
+            Assert.IsNotNull(result); 
         }
     }
 }
