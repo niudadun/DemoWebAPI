@@ -10,14 +10,14 @@
 
     text-align: center;
     color: #fff;
-    padding-top: 100px; 
-    padding-bottom: 50px;
+    padding-top: 170px; 
+    padding-bottom: 100px;
 }
 
 @media (min-width: 768px) {
     #containerjambo {
-        padding-top: 300px;
-        padding-bottom: 200px;
+        padding-top: 170px;
+        padding-bottom: 100px;
     }
 }
 @media (max-width: 768px) {
@@ -131,4 +131,24 @@ footer {
     padding: 0;
     border: 0;
     display: block;
+}
+
+.div-left {
+    float: left;
+    padding-left: 10px;
+    margin-left: 5%;
+    margin-bottom: 20px;
+}
+
+.div-right {
+    float: right;
+    padding-right: 10px;
+    margin-right: 10%;
+    margin-bottom: 20px;
+}
+#searchWeather {
+    width: 80px;
+}
+#clearinput {
+    width: 80px;
 }
